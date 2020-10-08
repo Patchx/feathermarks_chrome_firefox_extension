@@ -26,6 +26,10 @@ class Background {
 		omnibox.onInputEntered.addListener(function(text) {
 			alert('You just typed "' + text + '"');
 		});
+
+		chrome.commands.onCommand.addListener(function(command) {
+			alert('Command:', command);
+		});
 	}
 }
 

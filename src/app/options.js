@@ -4,7 +4,7 @@ import { storage } from 'utils/Storage.js'
 import 'styles/options.scss'
 
 class Options {
-  constructor () {
+  constructor() {
     /**
      * Predefined values.
      *
@@ -16,10 +16,10 @@ class Options {
       messageTime: 2000
     }
 
-    selector(document).ready(this.bind())
+    selector(document).ready(this.bind());
   }
 
-  bind () {
+  bind() {
     /**
     * Detect click action under save button.
     */
@@ -50,7 +50,7 @@ class Options {
    *
    * @param {Callback} callback
    */
-  getOptions () {
+  getOptions() {
     return {
       standard: selector('#default-input').val(),
       checkbox: selector('#default-checkbox').checked()
@@ -60,7 +60,7 @@ class Options {
   /**
    * Retrieve values from Chrome storage and set as default value.
    */
-  setOptions () {
+  setOptions() {
     storage.get({
       standard: '',
       checkbox: false
@@ -77,7 +77,7 @@ class Options {
    * @param {String} message
    * @param {String} classname
    */
-  response (message, classname) {
+  response(message, classname) {
     // Set text message.
     selector('.response').text(message)
     // Add provided class.

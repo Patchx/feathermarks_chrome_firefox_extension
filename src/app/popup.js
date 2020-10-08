@@ -4,17 +4,17 @@ import { runtime } from 'utils/Runtime.js'
 import 'styles/popup.scss'
 
 class Popup {
-  constructor () {
-    selector(document).ready(this.bind())
+  constructor() {
+    selector(document).ready(this.bind());
   }
 
-  bind () {
+  bind() {
     /**
      * Open options dropown list.
      */
     selector('.open-options').click(() => {
       // Toggle options list with 'show' class.
-      selector('.menu-options').toggle('show')
+      selector('.menu-options').toggle('show');
     })
 
     /**
@@ -23,10 +23,10 @@ class Popup {
     selector('.open-settings').click(() => {
       if (runtime.api('runtime').openOptionsPage) {
         // New way to open options pages, if supported (Chrome 42+).
-        runtime.api('runtime').openOptionsPage()
+        runtime.api('runtime').openOptionsPage();
       } else {
         // Reasonable fallback.
-        window.open(runtime.api('runtime').getURL('options.html'))
+        window.open(runtime.api('runtime').getURL('options.html'));
       }
     })
   }

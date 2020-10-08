@@ -16,7 +16,7 @@ export class Runtime {
    * @param {String} api
    * @returns {Runtime.api.extension}
    */
-  api (method) {
+  api(method) {
     try {
       if (chrome[method]) {
         return chrome[method]

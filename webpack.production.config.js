@@ -6,7 +6,6 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   entry: {
-    options: path.resolve(__dirname, 'src/app/options.js'),
     popup: path.resolve(__dirname, 'src/app/popup.js'),
     new_tab: path.resolve(__dirname, 'src/app/new_tab.js'),
   },
@@ -58,14 +57,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/views/options.html'),
-      filename: 'options.html',
-      chunks: ['options'],
-      inject: true,
-      minify: {}
     }),
 
     new HtmlWebpackPlugin({

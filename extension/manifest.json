@@ -2,24 +2,17 @@
   "manifest_version": 2,
 
   "name": "FeatherMarks_Extension",
-  "description": "__MSG_extDesc__",
+  "description": "Official Extension of FeatherMarks.com",
   "version": "1.0",
   "default_locale": "en",
-
-  "omnibox": {"keyword": "/"},
-
-  "options_ui": {
-    "page": "dist/options.html",
-    "chrome_style": true
-  },
 
   "icons": {
     "128": "icons/icon.png"
   },
 
-  "background": {
-    "persistent": false,
-    "scripts": ["dist/background.js"]
+  "options_ui": {
+    "page": "dist/options.html",
+    "chrome_style": true
   },
 
   "browser_action": {
@@ -35,15 +28,9 @@
     "https://*/*"
   ],
 
-  "commands": {
-    "toggle-feature-foo": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
-      },
-      "description": "Toggle feature foo"
-    }
-  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
 
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+  "chrome_url_overrides" : {
+    "newtab": "dist/new_tab.html"
+  }
 }

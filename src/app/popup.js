@@ -10,14 +10,6 @@ class Popup {
 
   bind() {
     /**
-     * Open options dropown list.
-     */
-    selector('.open-options').click(() => {
-      // Toggle options list with 'show' class.
-      selector('.menu-options').toggle('show');
-    })
-
-    /**
      * Open the settings page.
      */
     selector('.open-settings').click(() => {

@@ -7,7 +7,7 @@ module.exports = {
   entry: {
     options: path.resolve(__dirname, 'src/app/options.js'),
     popup: path.resolve(__dirname, 'src/app/popup.js'),
-    background: path.resolve(__dirname, 'src/app/background.js')
+    new_tab: path.resolve(__dirname, 'src/app/new_tab.js'),
   },
 
   output: {
@@ -71,6 +71,14 @@ module.exports = {
       template: path.resolve(__dirname, 'src/views/popup.html'),
       filename: 'popup.html',
       chunks: ['popup'],
+      inject: true,
+      minify: {}
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/views/new_tab.html'),
+      filename: 'new_tab.html',
+      chunks: ['new_tab'],
       inject: true,
       minify: {}
     }),

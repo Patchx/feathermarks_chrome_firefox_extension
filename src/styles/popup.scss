@@ -1,6 +1,6 @@
 .container {
   display: block;
-  height: 45px;
+  height: 150px;
   overflow: hidden;
   padding: 0;
   width: 190px;
@@ -16,9 +16,7 @@
   float: left;
   opacity: .55;
   font-size: 14px;
-}
-
-.title span {
   padding: 4px 0;
   display: block;
+  margin-bottom: 15px;
 }

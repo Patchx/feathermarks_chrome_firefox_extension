@@ -6,7 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     popup: path.resolve(__dirname, 'src/app/popup.js'),
-    new_tab: path.resolve(__dirname, 'src/app/new_tab.js'),
   },
 
   output: {

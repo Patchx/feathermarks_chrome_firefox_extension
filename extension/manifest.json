@@ -3,7 +3,7 @@
 
   "name": "FeatherMarks_Extension",
   "description": "Official Extension of FeatherMarks.com",
-  "version": "1.0",
+  "version": "0.0.0.1",
   "default_locale": "en",
 
   "icons": {

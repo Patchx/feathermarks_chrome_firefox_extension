@@ -6,6 +6,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   entry: {
+    new_tab: path.resolve(__dirname, 'src/app/new_tab.js'),
     popup: path.resolve(__dirname, 'src/app/popup.js'),
   },
 

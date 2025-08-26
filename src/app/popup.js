@@ -1,27 +1,17 @@
-import { selector } from 'utils/Selector.js'
-import { runtime } from 'utils/Runtime.js'
+// popup.js
 
-import 'styles/popup.scss'
-
-class Popup {
-  constructor() {
-    selector(document).ready(this.bind());
-  }
-
-  bind() {
-    /**
-     * Open the settings page.
-     */
-    selector('.open-settings').click(() => {
-      if (runtime.api('runtime').openOptionsPage) {
-        // New way to open options pages, if supported (Chrome 42+).
-        runtime.api('runtime').openOptionsPage();
-      } else {
-        // Reasonable fallback.
-        window.open(runtime.api('runtime').getURL('options.html'));
-      }
-    })
-  }
-}
-
-export const popup = new Popup()
+document.addEventListener('DOMContentLoaded', () => {
+  // Query for the current active tab.
+  // The 'activeTab' permission allows us to do this.
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    // We expect the query to return an array with a single tab.
+    const current_tab = tabs[0];
+    const tab_title_element = document.getElementById('tab_title');
+    
+    if (current_tab && current_tab.title) {
+      tab_title_element.textContent = current_tab.title;
+    } else {
+      tab_title_element.textContent = 'Could not get tab title.';
+    }
+  });
+});

@@ -24,10 +24,6 @@
     "newtab": "dist/new_tab.html"
   },
 
-  "host_permissions": [
-    "*://*.feathermarks.com/*"
-  ],
-
   "permissions": [
     "activeTab"
   ]

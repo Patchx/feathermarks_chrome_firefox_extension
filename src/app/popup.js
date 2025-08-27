@@ -1,19 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+const fetch_button = document.getElementById('bookmark-action');
+
+fetch_button.addEventListener('click', () => {
+  chrome.tabs.query({
+    active: true, 
+    currentWindow: true,
+  }, (tabs) => {
     const current_tab = tabs[0];
-    const tab_title_element = document.getElementById('tab_title');
-    let new_text = '';
-    
-    if (current_tab && current_tab.title) {
-      new_text = current_tab.title;
-    } else {
-      new_text = 'Could not get tab title.';
+    let redirect_url =  'https://feathermarks.com/home';
+
+    if (current_tab && current_tab.title && current_tab.url) {
+      const encoded_title = encodeURIComponent(current_tab.title);
+      const encoded_url = encodeURIComponent(current_tab.url);
+      redirect_url += '?new_title=' + encoded_title + '&new_url=' + encoded_url;
     }
 
-    if (current_tab && current_tab.url) {
-      new_text += ' and url = ' + current_tab.url;
-    }
-
-    tab_title_element.textContent = new_text;
+    chrome.tabs.create({url: redirect_url});
   });
 });

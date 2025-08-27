@@ -4,18 +4,31 @@
     <title>@</title>
 
     <style>
+      body {
+        background-color: #2f3237;
+        color: white;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 200;
+      }
+
+      #bookmark-action {
+        color: #3490dc;
+        cursor: pointer;
+      }
+
       .container {
         display: block;
-        height: 200px;
-        overflow: scroll;
-        padding: 10;
-        width: 300px;
+        height: 115px;
+        padding: 0px 8px;
+        width: 360px;
       }
 
       .title {
-        color: #000;
-        font-size: 14px;
-        padding: 4px 0;
+        font-size: 18px;
+        font-weight: 100;
         display: block;
         margin-bottom: 15px;
       }
@@ -23,11 +36,10 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">FeatherMarks Extension</h1>
+      <h1 class="title">FeatherMarks</h1>
 
-      <p>This extension changes the New Tab page. If you would like to change this, please disable or remove the extension</p>
+      <p id="bookmark-action">Bookmark Current Page</p>
 
-      <p>Test to fetch the title of the current page:</p>
-      <p id="tab_title"></p>
+      <p style="font-size:12px; margin-top:5px;"><i>This extension changes the New Tab page to Feathermarks.com. To disable this, please disable or remove the extension</i></p>
   </body>
 </html>
